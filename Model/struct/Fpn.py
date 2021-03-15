@@ -38,7 +38,7 @@ class fpn(nn.Module):
         p3 = F.interpolate(input=p4, size=(p3.size(2),p3.size(3)), mode="nearest") + p3
 
         p5 = self.top_down_conv1(p5)
-        p4 = self.top_down_conv1(p4)
-        p3 = self.top_down_conv1(p3)
+        p4 = self.top_down_conv2(p4)
+        p3 = self.top_down_conv3(p3)
 
         return p3, p4, p5
